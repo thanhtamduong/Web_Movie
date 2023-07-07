@@ -2,13 +2,17 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getmovieList } from "../../store/quanLyPhim/thunkAction";
 import { Skeleton } from "antd";
+import { Link } from "react-router-dom";
+// import { getinfoMovie } from "../../store/layThongTinFlim/thunkAction";
 
 const ListMovie = () => {
   const dispatch = useDispatch();
   const { movieList, isLoading } = useSelector((state) => state.quanLyPhim);
+  console.log("quanLyPhim", movieList);
   useEffect(() => {
     dispatch(getmovieList());
   }, [dispatch]);
+
   if (isLoading) {
     return (
       <div className="flex flex-wrap gap-1 justify-center p-4">
@@ -31,17 +35,19 @@ const ListMovie = () => {
         <hr />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
-        {movieList.map((item) => {
+        {movieList.map((movie) => {
           return (
-            <div className="">
-              <div className="hover: cursor-pointer">
-                <img
-                  className="rounded-lg h-[400px]"
-                  src={item.hinhAnh}
-                  alt={item.hinhAnh}
-                />
+            <Link key={movie.maPhim} to={`/details/${movie.maPhim}`}>
+              <div className="">
+                <div className="hover: cursor-pointer">
+                  <img
+                    className="rounded-lg h-[400px]"
+                    src={movie.hinhAnh}
+                    alt={movie.hinhAnh}
+                  />
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

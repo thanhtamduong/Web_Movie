@@ -7,7 +7,7 @@ export const quanLyPhimServices = {
   getBannerList: () => {
     return http.get(`/QuanLyPhim/LayDanhSachBanner`);
   },
-  getInfoMovie: (query = "") => {
-    return http.get(`QuanLyPhim/LayThongTinPhim${query}`);
+  getInfoMovie: (maPhim) => {
+    return http.get(`QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`);
   },
 };

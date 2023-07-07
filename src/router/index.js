@@ -15,7 +15,7 @@ const Router = () => {
           element: <Home />,
         },
         {
-          path: "detail/{id}",
+          path: "/details/:maPhim",
           element: <DetailMovie />,
         },
       ],
