@@ -6,10 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { StyleProvider } from "@ant-design/cssinjs";
+import { ToastMessge } from "./components/ToastMessge";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <StyleProvider hashPriority="high">
+      <ToastMessge />
       <App />
     </StyleProvider>
   </Provider>

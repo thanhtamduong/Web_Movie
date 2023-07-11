@@ -1,8 +1,10 @@
 import DetailMovie from "../page/Detail";
 import Home from "../page/Home";
 import MainLayout from "../layout/MainLayout";
+import Register from "../page/Register";
+import Login from "../page/Login";
 
-const { useRoutes } = require("react-router-dom");
+const { useRoutes, Navigate } = require("react-router-dom");
 
 const Router = () => {
   const element = useRoutes([
@@ -22,11 +24,11 @@ const Router = () => {
     },
     {
       path: "/register",
-      element: <></>,
+      element: <Register />,
     },
     {
       path: "/login",
-      element: <></>,
+      element: <Login />,
     },
   ]);
   return element;

@@ -41,12 +41,8 @@ const DetailView = () => {
       />
       <div className="absolute z-100 top-40">
         <div className="grid grid-cols-3 ">
-          <div className="ml-24 ">
-            <img
-              className="rounded-lg h-[400px]"
-              src={data.hinhAnh}
-              alt={data.maPhim}
-            />
+          <div className="mx-24 w-[267px] h-[400px]">
+            <img className="rounded-lg " src={data.hinhAnh} alt={data.maPhim} />
             <button className=" w-[267px] bg-red-600 hover:bg-red-400 text-white font-bold py-2 px-4 mt-7  rounded inline-flex items-center justify-center">
               <img src={IconPlay} alt="" className="mr-3" />
               <span className="text-white text-1 font-normal uppercase">
